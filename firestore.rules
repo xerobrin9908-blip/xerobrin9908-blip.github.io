@@ -9,6 +9,9 @@ service cloud.firestore {
       allow get: if signedIn() && request.auth.uid == uid;
       allow list, create, update, delete: if false;
     }
+    match /private/{document=**} {
+      allow read, write: if false;
+    }
     match /configs/{configId} {
       allow read: if resource.data.status == "approved";
       allow create, update, delete: if isAdmin();
