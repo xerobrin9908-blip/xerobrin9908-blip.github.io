@@ -58,10 +58,18 @@ async function route(request, env) {
     const result = await env.DB.prepare(
       "SELECT id,type,name,author,created_at,data_json FROM configs WHERE status='approved' ORDER BY created_at DESC"
     ).all();
-    const configs = await Promise.all((result.results || []).map(async row => ({
-      id: row.id, type: row.type, name: row.name, author: row.author,
-      created: row.created_at, data: JSON.parse(row.data_json), stats: await stats(env.DB, row.id)
-    })));
+    const clientId = url.searchParams.get("client_id") || "";
+    const configs = await Promise.all((result.results || []).map(async row => {
+      const item = {
+        id: row.id, type: row.type, name: row.name, author: row.author,
+        created: row.created_at, data: JSON.parse(row.data_json), stats: await stats(env.DB, row.id)
+      };
+      if (validClientId(clientId)) {
+        const vote = await env.DB.prepare("SELECT value FROM votes WHERE config_id=? AND client_id=?").bind(row.id, clientId).first();
+        item.my_vote = vote?.value === 1 ? "like" : vote?.value === -1 ? "dislike" : "";
+      }
+      return item;
+    }));
     return response({ configs });
   }
 
