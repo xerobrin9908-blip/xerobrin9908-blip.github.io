@@ -24,7 +24,11 @@ service cloud.firestore {
     }
     match /votes/{voteId} {
       allow read: if isAdmin();
-      allow create, update: if signedIn()
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.value in ["like", "dislike", "clear"];
+      allow update: if signedIn()
+        && resource.data.uid == request.auth.uid
         && request.resource.data.uid == request.auth.uid
         && request.resource.data.value in ["like", "dislike", "clear"];
       allow delete: if signedIn() && resource.data.uid == request.auth.uid;
