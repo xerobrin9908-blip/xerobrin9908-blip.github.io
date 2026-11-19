@@ -1,27 +1,30 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17191a"><title>CaseGraph · Каталог тем</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17191a"><title>CaseGraph · Каталог конфигураций</title>
 <style>
 :root{color-scheme:dark;--bg:#17191a;--panel:#202324;--text:#e9e5d8;--muted:#aaa492;--line:#383c3d;--accent:#ff6f61}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
-header{padding:22px max(18px,calc((100vw - 1100px)/2));background:var(--panel);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-h1{font:italic 600 25px Georgia,serif;margin:0}header p{margin:4px 0 0;color:var(--muted);font-size:13px}
-a,button{color:inherit} .back{border:1px solid var(--line);border-radius:5px;padding:9px 13px;text-decoration:none}.back:hover{border-color:var(--accent);background:#3b2926}
-main{max-width:1100px;margin:30px auto;padding:0 18px}.intro{color:var(--muted);max-width:720px;margin:0 0 22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-article{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:17px}
-article h2{font:600 17px Georgia,serif;margin:0 0 7px}article p{color:var(--muted);margin:0;font-size:13px}
-.tag{display:inline-block;margin-top:13px;color:var(--accent);font-size:11px;letter-spacing:.04em;text-transform:uppercase}
-footer{max-width:1100px;margin:28px auto;padding:0 18px 30px;color:var(--muted);font-size:12px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:20px max(18px,calc((100vw - 1120px)/2));background:var(--panel);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+h1{font:italic 600 24px Georgia,serif;margin:0}header p{margin:4px 0 0;color:var(--muted);font-size:13px}
+a,button{color:inherit}.back,.filter,button{border:1px solid var(--line);border-radius:5px;padding:8px 12px;background:transparent;text-decoration:none;cursor:pointer}.back:hover,button:hover,.filter:hover{border-color:var(--accent);background:#3b2926}
+main{max-width:1120px;margin:26px auto;padding:0 18px}.intro{color:var(--muted);max-width:760px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.filter.active{background:var(--accent);color:#17191a;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+article{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:15px;display:flex;flex-direction:column;gap:10px;min-height:170px}
+article h2{font:600 17px Georgia,serif;margin:0}article p{color:var(--muted);font-size:12px;margin:0}
+.preview{height:76px;border-radius:4px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:8px;background:var(--preview,#252525);color:var(--previewText,#eee);font-size:13px}
+.preview i{width:11px;height:11px;border-radius:50%;background:var(--dot,#ff6f61);display:inline-block}.actions{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}.actions button{flex:1}.kind{color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+#status{color:var(--muted);font-size:12px;min-height:20px;margin:12px 0}footer{max-width:1120px;margin:25px auto;padding:0 18px 30px;color:var(--muted);font-size:12px}
 </style></head><body>
-<header><div><h1>CaseGraph · Каталог тем</h1><p>Справочник направлений и методов открытого исследования</p></div><a class="back" href="index.html">← Вернуться в OSINT</a></header>
-<main><p class="intro">Каталог помогает выбрать направление для изучения и структурировать открытые источники. Используйте только законно доступные данные, уважайте приватность и проверяйте информацию по нескольким независимым источникам.</p>
-<div class="grid">
-<article><h2>Поиск и оценка источников</h2><p>Поисковые операторы, проверка первоисточников, оценка надёжности публикаций и фиксация ссылок.</p><span class="tag">Базовые навыки</span></article>
-<article><h2>Проверка изображений</h2><p>Контекст публикации, обратный поиск изображений, метаданные и признаки повторного использования.</p><span class="tag">Медиа</span></article>
-<article><h2>Географический контекст</h2><p>Чтение карт, сопоставление общедоступных ориентиров и проверка географических утверждений.</p><span class="tag">Геоданные</span></article>
-<article><h2>Хронология событий</h2><p>Построение временной шкалы, нормализация дат и сопоставление сообщений из разных источников.</p><span class="tag">Анализ</span></article>
-<article><h2>Проверка веб-страниц</h2><p>Архивные копии, история изменений, структура сайта и проверка происхождения опубликованного материала.</p><span class="tag">Веб</span></article>
-<article><h2>Связи и графы</h2><p>Моделирование связей между событиями, документами и публичными организациями с указанием оснований.</p><span class="tag">CaseGraph</span></article>
-<article><h2>Проверка утверждений</h2><p>Разделение фактов, предположений и неизвестного; поиск подтверждений и противоречащих свидетельств.</p><span class="tag">Верификация</span></article>
-<article><h2>Организация материалов</h2><p>Заметки, карточки источников, журнал решений и прозрачная фиксация методики исследования.</p><span class="tag">Рабочий процесс</span></article>
-</div></main><footer>CaseGraph · Каталог тем</footer></body></html>
+<header><div><h1>CaseGraph · Каталог конфигураций</h1><p>Темы рабочего пространства и курсоры</p></div><a class="back" href="index.html">← Вернуться в CaseGraph</a></header>
+<main><p class="intro">Каталог загружает конфигурации из <code>configs/index.json</code>. Нажмите «Применить», чтобы передать настройки визуализатору на этом же сайте. Настройки сохраняются в браузере.</p>
+<div class="toolbar"><button class="filter active" data-filter="all">Всё</button><button class="filter" data-filter="casegraph">Темы</button><button class="filter" data-filter="cursor">Курсоры</button></div>
+<div id="status">Загрузка каталога…</div><div class="grid" id="grid"></div></main>
+<footer>CaseGraph · Конфигурации хранятся в JSON-файле репозитория</footer>
+<script>
+const grid=document.querySelector("#grid"),status=document.querySelector("#status");let all=[],filter="all";
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function render(){const list=all.filter(x=>filter==="all"||x.type===filter);grid.innerHTML=list.map(x=>{const s=x.data?.s||{},c=x.data?.c||{},isTheme=x.type==="casegraph";const bg=s.cbg||"#252525",fg=s.ctx||"#eeeeee",dot=s.accent||"#ff6f61";return '<article><span class="kind">'+(isTheme?"Тема":"Курсор")+'</span><h2>'+esc(x.name)+'</h2><div class="preview" style="--preview:'+esc(bg)+';--previewText:'+esc(fg)+';--dot:'+esc(dot)+'">'+(isTheme?'<i></i><b>CaseGraph</b><span>Graph</span>':'<b style="font-size:25px">'+esc(c.emoji||"✦")+'</b><span>Cursor</span>')+'</div><p>Автор: '+esc(x.author||"Unknown")+'</p><div class="actions"><button data-apply="'+esc(x.id)+'">Применить</button></div></article>'}).join("")||"<p>В этой категории пока нет конфигураций.</p>";}
+async function load(){try{const r=await fetch("configs/index.json",{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);const j=await r.json();all=Array.isArray(j)?j:(j.configs||[]);status.textContent="Загружено конфигураций: "+all.length;render()}catch(e){status.textContent="Не удалось загрузить configs/index.json: "+e.message}}
+document.querySelector(".toolbar").addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;filter=b.dataset.filter;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));render()});
+grid.addEventListener("click",e=>{const b=e.target.closest("[data-apply]");if(!b)return;const x=all.find(v=>v.id===b.dataset.apply);if(!x)return;try{if(x.type==="casegraph"){const s=x.data?.s||{};localStorage.setItem("casegraph:settings",JSON.stringify(s));if(x.data?.bg)localStorage.setItem("casegraph:bgimg",x.data.bg);else localStorage.removeItem("casegraph:bgimg")}else if(x.type==="cursor"){const c=x.data?.c;if(!c)throw Error("Нет данных курсора");localStorage.setItem("casegraph:cursor",JSON.stringify(c))}status.textContent="«"+x.name+"» применена. Откройте CaseGraph или обновите его страницу."; }catch(err){status.textContent="Не удалось применить: "+err.message}});
+load();
+</script></body></html>
