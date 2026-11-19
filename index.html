@@ -1420,7 +1420,7 @@ const fb=t=>[...fab.children].find(b=>b.textContent.trim()===t);
 /* ---- extra sections inside the ＋ menu ---- */
 const EXTRA=`<div class="fl" data-x2="">View</div><button data-x2="all">Show all</button><div class="fl" data-x2="">Catalog</div><button data-x2="catalog">📚 Открыть каталог тем</button>
 <div class="fl" data-x2="">Tools</div><button data-x2="pal">⌘ Command palette</button><button data-x2="png">Export PNG</button><button data-x2="hist">🕘 History</button><button data-x2="game">☕ Rest</button><button data-x2="set">⚙ Settings</button><button data-x2="cur">🖱 Cursor studio</button>`;
-new MutationObserver(()=>{if(!addm.querySelector("[data-x2]"))addm.insertAdjacentHTML("beforeend",EXTRA)}).observe(addm,{childList:true});
+if(!addm.querySelector("[data-x2]"))addm.insertAdjacentHTML("beforeend",EXTRA);new MutationObserver(()=>{if(!addm.querySelector("[data-x2]"))addm.insertAdjacentHTML("beforeend",EXTRA)}).observe(addm,{childList:true});
 addm.addEventListener("click",e=>{const b=e.target.closest("[data-x2]"),a=b&&b.dataset.x2;if(!a)return;addm.hidden=true;
  if(a==="catalog"){location.href="catalog.html"}else if(a==="all")showAll();else if(a==="png")png();else if(a==="cur"){if(window.__cursorStudio)window.__cursorStudio()}else{const t={pal:"⌘",hist:"🕘",game:"☕",set:"⚙"}[a],x=fb(t);if(x)x.click()}});
 /* ---- items that can leave the camera ---- */
